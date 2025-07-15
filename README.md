@@ -1,8 +1,12 @@
+
 # Node.js Backend with MongoDB
 
-This is a Node.js backend application with MongoDB, implementing user authentication, authorization, OTP verification, password reset, user management, and image upload functionality. It supports multiple user roles (admin, licensee, vendor, user) and includes features like user blocking, filtering, and profile image management (with automatic deletion of previous images on update and user deletion).
+This is a Node.js backend application with MongoDB, implementing user authentication, authorization, OTP verification, password reset, user management, and image upload functionality. It supports multiple user roles (admin, licensee, vendor, user) and includes features like user blocking, filtering, and profile image management.
 
-## Table of Contents
+---
+
+## 📚 Table of Contents
+
 - [Features](#features)
 - [Folder Structure](#folder-structure)
 - [Prerequisites](#prerequisites)
@@ -10,82 +14,47 @@ This is a Node.js backend application with MongoDB, implementing user authentica
 - [Configuration](#configuration)
 - [Running the Application](#running-the-application)
 - [API Endpoints](#api-endpoints)
-- [File Contents](#file-contents)
-  - [Environment File](#environment-file)
-  - [Package Configuration](#package-configuration)
-  - [Configuration Files](#configuration-files)
-  - [Middleware](#middleware)
-  - [Models](#models)
-  - [Routes](#routes)
-  - [Controllers](#controllers)
-  - [Services](#services)
-  - [Utilities](#utilities)
-  - [Server Entry Point](#server-entry-point)
 - [Testing](#testing)
 - [Adding New Features](#adding-new-features)
+- [Contributing](#contributing)
 - [Notes](#notes)
 
-## Features
-- **Authentication**: JWT-based signin/signup with email and password.
-- **Authorization**: Role-based access control (admin, licensee, vendor, user).
-- **OTP Verification**: Email-based OTP for account verification.
-- **Password Management**: Forgot password and reset password with OTP.
-- **User Management**:
-  - Block/unblock users (admin only).
-  - Get current user, all users, or filter by role (admin only).
-  - Update or delete users (admin only).
-- **Image Upload**:
-  - Upload profile images (JPEG, JPG, PNG, max 5MB).
-  - Deletes previous image on update.
-  - Deletes image when user is deleted.
-- **Security**: Password hashing, input validation, and blocked user checks.
+---
 
-## Folder Structure
+## 🚀 Features
 
-project/
-├── config/                 # Configuration files
-│   ├── db.js              # MongoDB connection
-│   └── config.js          # App configuration
-├── middleware/            # Middleware for auth, roles, and file uploads
-│   ├── auth.js
-│   ├── role.js
-│   └── multer.js
-├── models/                # MongoDB schemas
-│   ├── User.js
-│   ├── OTP.js
-├── routes/                # API routes
-│   ├── auth.js
-│   ├── user.js
-├── controllers/           # Route handlers
-│   ├── authController.js
-│   ├── userController.js
-├── services/              # External services
-│   ├── emailService.js
-├── utils/                 # Utility functions
-│   ├── generateOTP.js
-│   ├── validate.js
-├── uploads/               # Folder for profile images
-│   ├── profile_images/
-├── .env                   # Environment variables
-├── package.json           # Dependencies and scripts
-├── server.js              # Entry point
-├── README.md              # This file
+### 🔐 Authentication
+- JWT-based signin/signup with email and password
 
+### 🛡️ Authorization
+- Role-based access control (`admin`, `licensee`, `vendor`, `user`)
 
+### 📩 OTP Verification
+- Email-based OTP for account verification
 
+### 🔑 Password Management
+- Forgot password and reset password using OTP
 
-## Prerequisites
-- **Node.js**: Version 14.x or higher
-- **MongoDB**: Local or cloud instance (e.g., MongoDB Atlas)
-- **Gmail Account**: For sending OTP emails
-- **Git**: For cloning the repository
-- **NPM**: Installed with Node.js
+### 👤 User Management
+- Block/unblock users (admin only)
+- Get current user, all users, or filter by role (admin only)
+- Update or delete users (admin only)
 
-## Installation
-1. **Clone the Repository**:
-   ```bash
-   git clone <repository-url>
-   cd project
+### 🖼️ Image Upload
+- Upload profile images (`JPEG`, `JPG`, `PNG`, max 5MB)
+- Automatically deletes previous image on update
+- Deletes image when user is deleted
+
+### 🧱 Security
+- Password hashing, input validation, and blocked user checks
+
+---
+
+## 🗂️ Folder Structure
+
+See original message above.
+
+---
 
 ## 🧰 Prerequisites
 
@@ -160,12 +129,7 @@ All routes are prefixed with `/api`.
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| POST | `/auth/signup` | Register new user |# Set to LF (recommended for cross-platform projects)
-git config --global core.autocrlf input
-
-# Or for Windows-only devs, use CRLF
-git config --global core.autocrlf true
-
+| POST | `/auth/signup` | Register new user |
 | POST | `/auth/register` | Alias for signup |
 | POST | `/auth/signin` | User login |
 | POST | `/auth/login` | Alias for signin |
@@ -293,8 +257,3 @@ Then modify `middleware/multer.js` to use `sharp` for resizing images.
 - **Email**: Gmail App Passwords required for OTP emails.
 
 For any issues or enhancements, please open an issue or contact the maintainer.
-
-
-#   b o o k m y e v e n t s - b a c k e n d 
- 
- 
